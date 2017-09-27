@@ -1,0 +1,62 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+{{ welcome }}
+
+
+{# Display a form #}
+<form action="/" method="post" class="form">
+    {% csrf_token %}
+    <!--{% bootstrap_form form %} -->
+
+    {% bootstrap_form_errors form layout='inline' %}
+
+    {% bootstrap_field form.firstName layout='horizontal' size='sm' %}
+    {% bootstrap_field form.lastName layout='horizontal' size='sm' %}
+
+    {% bootstrap_field form.password layout='horizontal' size='sm' %}
+
+    {% bootstrap_field form.email layout='horizontal' size='sm' %}
+    {% bootstrap_field form.age layout='horizontal' size='sm' %}
+    {% bootstrap_field form.cc_field layout='horizontal' size='sm' %}
+    {% bootstrap_field form.message layout='horizontal' size='sm' %}
+
+    {% bootstrap_field form.radioselect layout='horizontal' size='sm' %}
+    {% bootstrap_field form.select layout='horizontal' size='sm' %}
+    {% bootstrap_field form.multiselect layout='horizontal' size='sm' %}
+    {% bootstrap_field form.multichecked layout='horizontal' size='sm' %}
+
+    {% bootstrap_field form.birth_year layout='horizontal' size='sm' %}
+    {% bootstrap_field form.ddate layout='horizontal' size='sm' %}
+    {% bootstrap_field form.ddatetime layout='horizontal' size='sm' %}
+    {% bootstrap_field form.splitDateTimeField layout='horizontal' size='sm' %}
+
+    {% bootstrap_field form.decimalfield layout='horizontal' size='sm' %}
+    {% bootstrap_field form.floatfield layout='horizontal' size='sm' %}
+    {% bootstrap_field form.filefield layout='horizontal' size='sm' %}
+    {% bootstrap_field form.imageField layout='horizontal' size='sm' %}
+    {% bootstrap_field form.filepathfield layout='horizontal' size='sm' %}
+
+    {% bootstrap_button "submit" button_type="submit" button_class="btn-success" %}
+
+
+    <!--
+      {% for field in form %}
+        <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }} {{ filed.help_text}}
+        </div>
+      {% endfor %}
+    -->
+
+    
+</form>
+
